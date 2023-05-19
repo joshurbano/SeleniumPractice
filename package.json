@@ -1,0 +1,14 @@
+{
+  "name": "seleniumpractice",
+  "version": "1.0.0",
+  "description": "Selenium Practice Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joshua Urbano",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^4.9.2"
+  }
+}
