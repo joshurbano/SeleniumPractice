@@ -66,7 +66,20 @@ async function example() {
     const formattedDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
     await driver.findElement(By.xpath("/html/body/main/div/div/div[2]/div[4]/div/form/table/tbody/tr[5]/td[2]/input")).sendKeys(formattedDate);
 
-    // Wait for 5 seconds (5000 milliseconds) before closing the browser
+    // Find the manual tester checkbox by its value attribute
+    const manualTesterCheckbox = await driver.findElement(By.xpath("/html/body/main/div/div/div[2]/div[4]/div/form/table/tbody/tr[6]/td[2]/span[1]/input"));
+
+    // Click the manual tester checkbox
+    await manualTesterCheckbox.click();
+
+  // File upload - Profile picture
+  const profilePicFilePath = path.resolve(__dirname, 'C:\\Users\\JoshuaUrbano\\Documents'); // Replace 'path_to_your_profile_pic_file' with the actual file path of your profile picture
+  const profilePicInput = await driver.findElement(By.id("TestFile"));
+
+  // Set the profile picture file path on the input element
+  await profilePicInput.sendKeys(profilePicFilePath);
+
+  // Wait for 5 seconds (5000 milliseconds) before closing the browser
     await new Promise((resolve) => setTimeout(resolve, 5000));
   } catch (error) {
     console.error("An error occurred:", error);
@@ -75,5 +88,5 @@ async function example() {
     await driver.quit();
   }
 }
-//test
+
 example();
