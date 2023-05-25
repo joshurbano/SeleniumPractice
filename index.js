@@ -1,5 +1,6 @@
 const { Builder, By, Key } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
+const path = require("path"); // Import the 'path' module
 
 async function example() {
   // Set the path to the Chromedriver executable
@@ -72,14 +73,14 @@ async function example() {
     // Click the manual tester checkbox
     await manualTesterCheckbox.click();
 
-  // File upload - Profile picture
-  const profilePicFilePath = path.resolve(__dirname, 'C:\\Users\\JoshuaUrbano\\Documents'); // Replace 'path_to_your_profile_pic_file' with the actual file path of your profile picture
-  const profilePicInput = await driver.findElement(By.id("TestFile"));
+    // File upload - Profile picture
+    //const profilePicFilePath = path.resolve(__dirname, 'C:\\Users\\Joshua\\Pictures\\Ina\\20210414_122212'); // Replace 'path_to_your_profile_pic_file' with the actual file path of your profile picture
+    //const profilePicInput = await driver.findElement(By.id("profile_picture"));
 
-  // Set the profile picture file path on the input element
-  await profilePicInput.sendKeys(profilePicFilePath);
+    // Set the profile picture file path on the input element
+    //await profilePicInput.sendKeys(profilePicFilePath);
 
-  // Wait for 5 seconds (5000 milliseconds) before closing the browser
+    // Wait for 5 seconds (5000 milliseconds) before closing the browser
     await new Promise((resolve) => setTimeout(resolve, 5000));
   } catch (error) {
     console.error("An error occurred:", error);
