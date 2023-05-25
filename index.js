@@ -17,7 +17,7 @@ async function example() {
     .build();
 
   try {
-    
+
     //navigate to Site
     await driver.get("https://www.tutorialspoint.com/selenium/selenium_automation_practice.htm");
 
@@ -73,12 +73,14 @@ async function example() {
     // Click the manual tester checkbox
     await manualTesterCheckbox.click();
 
-    // File upload - Profile picture
-    //const profilePicFilePath = path.resolve(__dirname, 'C:\\Users\\Joshua\\Pictures\\Ina\\20210414_122212'); // Replace 'path_to_your_profile_pic_file' with the actual file path of your profile picture
-    //const profilePicInput = await driver.findElement(By.id("profile_picture"));
+    // Find the file input element using XPath
+    const profilePicInput = await driver.findElement(By.xpath("//input[@type='file']"));
 
-    // Set the profile picture file path on the input element
-    //await profilePicInput.sendKeys(profilePicFilePath);
+    // Set the profile picture file path
+    const profilePicFilePath = path.resolve(__dirname, "C:\\Users\\Joshua\\Pictures\\Ina"); // Replace 'path_to_your_profile_picture' with the actual file path of your profile picture
+
+    // Upload the profile picture file
+    await profilePicInput.sendKeys(profilePicFilePath);
 
     // Wait for 5 seconds (5000 milliseconds) before closing the browser
     await new Promise((resolve) => setTimeout(resolve, 5000));
