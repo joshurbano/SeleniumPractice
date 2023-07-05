@@ -9,6 +9,8 @@
   "author": "Joshua Urbano",
   "license": "ISC",
   "dependencies": {
-    "selenium-webdriver": "^4.9.2"
+    "moment": "^2.29.4",
+    "selenium-webdriver": "^4.9.2",
+    "xlsx": "^0.18.5"
   }
 }
